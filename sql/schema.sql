@@ -234,14 +234,28 @@ INSERT INTO users (full_name, email, password_hash, role, phone) VALUES
 
 INSERT INTO ma_projects (code_projet, nom_projet, societe_cible, societe_acquereur, secteur, statut, valeur_estimee, devise, date_debut, date_cible_closing, description, created_by) VALUES
 ('MA-2026-001', 'Projet Baobab', 'Distributeurs Sahel SA', 'Groupe Teranga Holding', 'Distribution & Logistique', 'due_diligence', 4500000000.00, 'FCFA', '2026-03-01', '2026-10-31', 'Acquisition majoritaire (70%) de Distributeurs Sahel SA par le Groupe Teranga Holding afin de renforcer son réseau logistique en Afrique de l\'Ouest.', 2),
-('MA-2026-002', 'Projet Fleuve', 'AgroFinance Sénégal', 'Banque Atlantique Ouest', 'Services financiers', 'negociation', 2100000000.00, 'FCFA', '2026-05-15', '2026-12-15', 'Rapprochement stratégique entre AgroFinance Sénégal et Banque Atlantique Ouest visant une synergie sur le segment agricole.', 2);
+('MA-2026-002', 'Projet Fleuve', 'AgroFinance Sénégal', 'Banque Atlantique Ouest', 'Services financiers', 'negociation', 2100000000.00, 'FCFA', '2026-05-15', '2026-12-15', 'Rapprochement stratégique entre AgroFinance Sénégal et Banque Atlantique Ouest visant une synergie sur le segment agricole.', 2),
+('MA-2026-003', 'Projet Teranga', 'PharmaSénégal SA', 'MediGroup Afrique', 'Santé & Pharmacie', 'prospection', 1800000000.00, 'FCFA', '2026-06-01', '2027-02-28', 'Prise de contact initiale en vue du rachat de PharmaSénégal SA par MediGroup Afrique pour renforcer sa distribution pharmaceutique régionale.', 2),
+('MA-2026-004', 'Projet Sahel Digital', 'TeleSenNet', 'Orange Digital Ventures', 'Télécommunications', 'nda_signe', 3200000000.00, 'FCFA', '2026-04-10', '2026-11-30', 'Rachat de l\'opérateur de réseau TeleSenNet par Orange Digital Ventures ; NDA signé entre les parties, data room en cours d\'ouverture.', 2),
+('MA-2026-005', 'Projet Lumière', 'Solaire Ouest Africa', 'Groupe Teranga Holding', 'Énergie renouvelable', 'closing', 5600000000.00, 'FCFA', '2025-11-01', '2026-07-15', 'Acquisition finalisée de Solaire Ouest Africa par le Groupe Teranga Holding, opération menée à son terme avec succès.', 2),
+('MA-2026-006', 'Projet Baobab Export', 'AgroExport CI', 'Groupe Sahel Industries', 'Agroalimentaire', 'closing', 2750000000.00, 'FCFA', '2025-09-01', '2026-05-20', 'Cession réussie d\'AgroExport CI au Groupe Sahel Industries, signature des actes de closing effectuée.', 2),
+('MA-2026-007', 'Projet Mirage', 'BTP Rapide SA', 'Fonds Atlantique Capital', 'BTP & Construction', 'abandonne', 1200000000.00, 'FCFA', '2026-01-15', '2026-06-30', 'Opération abandonnée suite à la découverte de red flags majeurs (litiges non provisionnés) lors de la due diligence.', 2);
 
 INSERT INTO project_team (project_id, user_id, role_projet) VALUES
 (1, 2, 'chef_projet'),
 (1, 4, 'analyste'),
 (1, 3, 'observateur_cible'),
 (2, 2, 'chef_projet'),
-(2, 4, 'conseiller_financier');
+(2, 4, 'conseiller_financier'),
+(3, 2, 'chef_projet'),
+(3, 4, 'analyste'),
+(4, 2, 'chef_projet'),
+(4, 4, 'analyste'),
+(5, 2, 'chef_projet'),
+(5, 3, 'observateur_cible'),
+(6, 2, 'chef_projet'),
+(6, 3, 'observateur_cible'),
+(7, 2, 'chef_projet');
 
 INSERT INTO dataroom_folders (project_id, parent_id, nom, created_by) VALUES
 (1, NULL, '01 - Juridique', 2),
