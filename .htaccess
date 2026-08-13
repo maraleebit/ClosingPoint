@@ -1,0 +1,5 @@
+# Désactive la navigation dans les dossiers (aucun index de répertoire visible)
+Options -Indexes
+
+# Redirige la racine du projet vers la page d'accueil de l'application
+DirectoryIndex public/index.php

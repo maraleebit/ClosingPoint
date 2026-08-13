@@ -1,0 +1,183 @@
+/* =====================================================================
+   ClosingPoint — Charte graphique : blanc / camel / marron / nude
+   v4 — palette éclaircie + correction : certains composants Bootstrap
+   (boutons, pagination, cases à cocher) figent leurs couleurs en dur à
+   la compilation et NE SUIVENT PAS les variables --bs-primary/--bs-dark
+   redéfinies ci-dessous. Ils sont donc réalignés explicitement plus bas.
+   Les couleurs de statut (succès/alerte/danger) restent standard
+   (vert/jaune/rouge) pour la lisibilité des indicateurs.
+   ===================================================================== */
+
+:root {
+  /* Palette de marque */
+  --cp-nude:        #F5EDE4;  /* fond doux, survols */
+  --cp-camel:        #C9A579;  /* boutons, icônes, accents clairs */
+  --cp-camel-dark:   #B08D63;  /* survol/actif des éléments camel */
+  --cp-brown:        #8A6A4E;  /* navbar, en-têtes de tableaux, liens */
+  --cp-brown-dark:   #6E4A33;  /* survol des liens, accents profonds */
+  --cp-text:         #4A372B;  /* texte principal, chaud plutôt que noir pur */
+
+  /* Surcharge des variables globales Bootstrap (composants "utilitaires") */
+  --bs-body-bg: #FBF7F2;
+  --bs-body-color: var(--cp-text);
+
+  --bs-primary: var(--cp-brown);
+  --bs-primary-rgb: 138, 106, 78;
+  --bs-primary-bg-subtle: var(--cp-nude);
+  --bs-primary-border-subtle: #D9BFA0;
+  --bs-primary-text-emphasis: var(--cp-brown-dark);
+
+  --bs-secondary: #8A6F55;
+  --bs-secondary-rgb: 138, 111, 85;
+
+  --bs-dark: var(--cp-brown);
+  --bs-dark-rgb: 138, 106, 78;
+
+  --bs-border-color: #E7DCCD;
+
+  --bs-link-color: var(--cp-brown);
+  --bs-link-color-rgb: 138, 106, 78;
+  --bs-link-hover-color: var(--cp-brown-dark);
+  --bs-link-hover-color-rgb: 110, 74, 51;
+}
+
+body {
+  background-color: var(--bs-body-bg);
+}
+
+/* --- En-têtes de tableaux : Bootstrap fixe ces teintes en dur --- */
+.table-dark {
+  --bs-table-bg: var(--cp-brown);
+  --bs-table-color: #fff;
+  --bs-table-border-color: #A0815F;
+}
+
+.navbar-brand i {
+  color: var(--cp-camel);
+}
+
+.kpi-card {
+  border-left-width: 4px;
+  box-shadow: 0 1px 3px rgba(74, 46, 30, .08);
+  background-color: #fff;
+}
+
+.sidebar {
+  background-color: #fff !important;
+}
+.sidebar .nav-link {
+  color: var(--cp-text);
+  border-radius: 6px;
+  margin-bottom: 2px;
+}
+.sidebar .nav-link.active {
+  background-color: var(--cp-brown);
+  color: #fff;
+}
+.sidebar .nav-link:hover:not(.active) {
+  background-color: var(--cp-nude);
+}
+
+.login-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--cp-brown) 0%, var(--cp-camel) 100%);
+}
+.login-card {
+  width: 100%;
+  max-width: 440px;
+  border: none;
+  border-radius: 12px;
+}
+
+.table-danger td {
+  vertical-align: middle;
+}
+
+.breadcrumb {
+  background: none;
+  padding-left: 0;
+}
+
+footer {
+  color: #8A7361 !important;
+  border-color: var(--bs-border-color) !important;
+}
+
+/* =====================================================================
+   Boutons — Bootstrap compile des valeurs littérales (#0d6efd, #6c757d)
+   pour .btn-primary/.btn-secondary/.btn-outline-*, indépendantes de
+   --bs-primary/--bs-secondary. On les réécrit donc explicitement.
+   ===================================================================== */
+.btn-primary {
+  --bs-btn-color: var(--cp-text);
+  --bs-btn-bg: var(--cp-camel);
+  --bs-btn-border-color: var(--cp-camel);
+  --bs-btn-hover-color: var(--cp-text);
+  --bs-btn-hover-bg: var(--cp-camel-dark);
+  --bs-btn-hover-border-color: var(--cp-camel-dark);
+  --bs-btn-active-color: var(--cp-text);
+  --bs-btn-active-bg: var(--cp-camel-dark);
+  --bs-btn-active-border-color: var(--cp-camel-dark);
+  --bs-btn-disabled-bg: var(--cp-camel);
+  --bs-btn-disabled-border-color: var(--cp-camel);
+  --bs-btn-focus-shadow-rgb: 201, 165, 121;
+}
+
+.btn-outline-primary {
+  --bs-btn-color: var(--cp-brown);
+  --bs-btn-border-color: var(--cp-brown);
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: var(--cp-brown);
+  --bs-btn-hover-border-color: var(--cp-brown);
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: var(--cp-brown);
+  --bs-btn-active-border-color: var(--cp-brown);
+  --bs-btn-disabled-color: var(--cp-brown);
+  --bs-btn-disabled-border-color: var(--cp-brown);
+}
+
+.btn-secondary {
+  --bs-btn-color: var(--cp-text);
+  --bs-btn-bg: var(--cp-nude);
+  --bs-btn-border-color: #D9C7B3;
+  --bs-btn-hover-color: var(--cp-text);
+  --bs-btn-hover-bg: #E7D8C4;
+  --bs-btn-hover-border-color: #D9C7B3;
+  --bs-btn-active-color: var(--cp-text);
+  --bs-btn-active-bg: #E7D8C4;
+  --bs-btn-active-border-color: #D9C7B3;
+}
+
+.btn-outline-secondary {
+  --bs-btn-color: #8A7361;
+  --bs-btn-border-color: #D9C7B3;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #9C8168;
+  --bs-btn-hover-border-color: #9C8168;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #9C8168;
+  --bs-btn-active-border-color: #9C8168;
+}
+
+/* Pagination : l'état "page active" est également figé en bleu par défaut */
+.pagination {
+  --bs-pagination-active-bg: var(--cp-brown);
+  --bs-pagination-active-border-color: var(--cp-brown);
+}
+
+/* Cases à cocher / boutons radio cochés (ex: "confidentiel", "red flag") */
+.form-check-input:checked {
+  background-color: var(--cp-brown);
+  border-color: var(--cp-brown);
+}
+.form-check-input:focus {
+  border-color: var(--cp-camel);
+  box-shadow: 0 0 0 0.25rem rgba(138, 106, 78, .25);
+}
+
+/* En-tête d'accordéon ouvert (module Q&A) */
+.accordion-button:not(.collapsed) {
+  color: var(--cp-text);
+  background-color: var(--cp-nude);
+  box-shadow: none;
+}

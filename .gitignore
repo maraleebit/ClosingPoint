@@ -1,0 +1,18 @@
+# Dépendances Composer (installées localement via `composer install`)
+/vendor/
+
+# Documents réels déposés dans la data room (données sensibles / volumineuses)
+/uploads/*
+!/uploads/.gitkeep
+!/uploads/.htaccess
+
+# Fichiers d'environnement locaux éventuels
+.env
+*.local.php
+
+# Fichiers système
+.DS_Store
+Thumbs.db
+
+# Sujet du cahier des charges (document interne, pas un livrable du depot)
+/70_projets_Web_XAMPP_Master_CCA_ESP*.pdf

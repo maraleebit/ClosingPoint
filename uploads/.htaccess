@@ -1,0 +1,20 @@
+# Data room : aucun accès HTTP direct aux fichiers déposés (tout téléchargement doit
+# passer par modules/dataroom/download.php pour garantir authentification + traçabilité).
+# Désactive également toute exécution de script dans ce dossier (défense en profondeur).
+<IfModule mod_authz_core.c>
+    Require all denied
+</IfModule>
+<IfModule !mod_authz_core.c>
+    Order deny,allow
+    Deny from all
+</IfModule>
+
+<IfModule mod_php7.c>
+    php_flag engine off
+</IfModule>
+<IfModule mod_php8.c>
+    php_flag engine off
+</IfModule>
+
+Options -Indexes -ExecCGI
+AddHandler none .php .phtml .php3 .php4 .php5 .php7

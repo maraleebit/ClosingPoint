@@ -1,0 +1,3 @@
+Ce dossier stocke les documents déposés dans la data room virtuelle (un sous-dossier par projet,
+créé automatiquement). Son contenu est exclu du dépôt Git (voir .gitignore) car il ne contient que
+des données de démonstration/production, jamais du code source.
