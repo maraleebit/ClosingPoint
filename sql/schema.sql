@@ -294,7 +294,14 @@ INSERT INTO qa_questions (project_id, document_id, question, reponse, posee_par,
 
 INSERT INTO valuations (project_id, methode, hypotheses, valeur_calculee, devise, created_by) VALUES
 (1, 'dcf', '{"fcf_an1":420000000,"croissance":0.05,"wacc":0.12,"g_terminal":0.03,"horizon":5}', 4380000000.00, 'FCFA', 2),
-(1, 'multiples', '{"ebitda":650000000,"multiple_ve_ebitda":6.8}', 4420000000.00, 'FCFA', 2);
+(1, 'multiples', '{"ebitda":650000000,"multiple_ve_ebitda":6.8}', 4420000000.00, 'FCFA', 2),
+(1, 'ancc', '{"actifComptable":2900000000,"plusValues":700000000,"moinsValues":100000000,"passifExigible":70000000}', 3430000000.00, 'FCFA', 2),
+(2, 'dcf', '{"fcfAn1":250000000,"croissance":6,"wacc":13,"gTerminal":3,"horizon":5}', 2741900000.00, 'FCFA', 2),
+(2, 'multiples', '{"ebitda":380000000,"multiple":6.5,"dette":350000000}', 2120000000.00, 'FCFA', 2),
+(2, 'ancc', '{"actifComptable":1800000000,"plusValues":450000000,"moinsValues":80000000,"passifExigible":120000000}', 2050000000.00, 'FCFA', 2),
+(4, 'dcf', '{"fcfAn1":400000000,"croissance":7,"wacc":12,"gTerminal":3,"horizon":5}', 5037000000.00, 'FCFA', 2),
+(4, 'multiples', '{"ebitda":620000000,"multiple":7.2,"dette":900000000}', 3564000000.00, 'FCFA', 2),
+(4, 'ancc', '{"actifComptable":2600000000,"plusValues":700000000,"moinsValues":150000000,"passifExigible":200000000}', 2950000000.00, 'FCFA', 2);
 
 INSERT INTO offers (project_id, type_offre, montant, devise, conditions, statut, emise_par, date_offre) VALUES
 (1, 'offre_initiale', 4200000000.00, 'FCFA', 'Offre indicative sous réserve des conclusions de la due diligence.', 'en_negociation', 2, '2026-04-10'),
