@@ -76,10 +76,22 @@ dynamique avec le nom du téléchargeur et la date, pour dissuader toute fuite. 
 **Faire :** ouvrir la data room d'un projet, montrer l'arborescence.
 
 ### 4.5 Due diligence (~0:45)
-**Dire :** « La due diligence couvre six domaines de vérification. Un point signalé comme "red
-flag" est chiffré financièrement — c'est ce montant cumulé qui permet de négocier une baisse de
-prix si des problèmes sérieux sont découverts. »
-**Faire :** liste due diligence, montrer un red flag et son impact estimé.
+**Faire, dans l'ordre :**
+1. Clique sur **Due Diligence** dans le menu de gauche.
+2. Choisis le **Projet Baobab** dans la liste.
+3. Tu arrives sur une liste de points de vérification, classés par domaine (juridique, fiscal,
+   financier, commercial, RH, informatique).
+4. Repère la ligne **surlignée en rouge** : « Analyse de la dette bancaire » (domaine Financier,
+   statut « Alerte ») — pose ta souris ou ton curseur dessus.
+5. Montre du doigt/souris la colonne **« Impact estimé »** sur cette même ligne : elle affiche
+   **180 000 000 FCFA**.
+
+**Dire (pendant que tu montres ces éléments) :** « La due diligence couvre six domaines de
+vérification — juridique, fiscal, financier, commercial, RH, informatique. Ici, sur le Projet
+Baobab, un problème a été détecté sur l'analyse de la dette bancaire : c'est ce qu'on appelle un
+"red flag", surligné en rouge dans le tableau. L'application chiffre son impact financier estimé
+— ici 180 millions de FCFA — et c'est ce montant qui permet ensuite de justifier une négociation
+à la baisse du prix de rachat. »
 
 ### 4.6 Q&A et NDA (~0:45)
 **Dire :** « Les investisseurs posent leurs questions directement dans l'application, avec
