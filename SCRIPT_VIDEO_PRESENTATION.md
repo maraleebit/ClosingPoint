@@ -1,143 +1,153 @@
 # Script — Vidéo de présentation ClosingPoint
 
-Durée cible **10-12 minutes** (fourchette imposée : 8-15 min), structure conforme au cahier des
-charges (Master CCA — ESP Dakar, Projet 36). Chaque bloc indique le minutage, ce que tu **dis**
-et ce que tu **montres**. Les minutages sont indicatifs — respecte surtout la fourchette globale
-et l'ordre des 6 parties imposées.
+Durée cible **10-12 minutes** (fourchette imposée par le cahier des charges : 8-15 min),
+structure en 6 parties imposées. Langage volontairement simple et métier — aucun terme
+informatique non expliqué — cohérent avec le guide « Comprendre ClosingPoint ».
 
-**Avant l'enregistrement** : Apache/MySQL démarrés, base `closingpoint` importée, 2-3
-navigateurs/onglets prêts avec les sessions admin/conseiller/client déjà ouvertes ou faciles à
-ouvrir. Ferme les onglets et notifications parasites. Zoome le navigateur pour la lisibilité.
+**Avant l'enregistrement** : Apache/MySQL démarrés, 2-3 navigateurs/onglets prêts avec les
+sessions admin/conseiller/client, projets de démonstration déjà en place (Baobab, Fleuve,
+Teranga, Sahel Digital, Lumière, Kalao, Mirage — 6 statuts différents visibles au tableau de
+bord). Ferme les onglets et notifications parasites, zoome le navigateur pour la lisibilité.
 
 ---
 
 ## 1. Présentation de l'étudiant et introduction du sujet (1-2 min)
 
 **Dire :**
-> « Bonjour, je m'appelle [ton prénom nom], je suis étudiant(e) en Master CCA — Comptabilité,
+> « Bonjour, je m'appelle [ton prénom nom], je suis étudiante en Master CCA — Comptabilité,
 > Contrôle, Audit — à l'École Supérieure Polytechnique de Dakar. Dans le cadre du projet "70
-> Projets Web / XAMPP" encadré par M. Ousmane LY, j'ai choisi le sujet n°36 : une plateforme web
-> de gestion de projets de fusion-acquisition (M&A) avec data room virtuelle, que j'ai nommée
+> Projets Web / XAMPP" encadré par M. Ousmane LY, j'ai choisi le sujet n°36 : une plateforme de
+> gestion de projets de fusion-acquisition avec data room virtuelle, que j'ai appelée
 > ClosingPoint. »
 
-**Montrer :** ton visage/webcam si le format le permet, ou un slide titre avec ton nom et le
-sujet, puis la page de connexion de l'application.
+**Montrer :** la page de connexion.
 
 ## 2. Problématique et objectifs de la plateforme (1 min)
 
 **Dire :**
-> « Un processus de fusion-acquisition mobilise de nombreux intervenants — cabinet conseil,
-> acquéreur, cible, investisseurs — autour de documents ultra-confidentiels échangés par email ou
-> clé USB, sans traçabilité ni sécurité. La problématique était donc : comment structurer
-> numériquement tout le cycle M&A — évaluation de la cible, due diligence multi-domaines, échange
-> documentaire sécurisé, négociation — dans une plateforme unique, sécurisée et traçable ?
-> L'objectif est d'offrir un outil professionnel utilisable par un cabinet de conseil réel. »
+> « Un rachat d'entreprise mobilise beaucoup de monde — le cabinet de conseil, l'acheteur, la
+> cible, parfois des investisseurs — autour de documents extrêmement confidentiels. Sans outil
+> dédié, tout cela se fait par emails et clés USB, sans aucune trace de qui a vu quoi, ni garantie
+> de confidentialité. L'objectif de ClosingPoint est de remplacer ça par une plateforme unique et
+> sécurisée où chaque étape du processus — évaluation de la cible, vérifications, échange de
+> documents, négociation — est organisée, tracée, et réservée aux bonnes personnes. »
 
-**Montrer :** le tableau de bord (vue d'ensemble) ou rester sur un slide.
+**Montrer :** rester sur la page de connexion ou basculer sur le tableau de bord.
 
 ## 3. Architecture technique et choix des technologies (1-2 min)
 
 **Dire :**
 > « Conformément au cahier des charges, la plateforme repose sur XAMPP : Apache, MySQL et PHP 8
-> en procédural avec des requêtes préparées PDO pour se protéger des injections SQL. Le front-end
-> utilise Bootstrap 5 pour le responsive, et Chart.js pour les graphiques dynamiques du tableau de
-> bord. J'ai structuré le code en mini-MVC : un dossier `includes/` pour la sécurité,
-> l'authentification et les fonctions métier partagées, et un dossier `modules/` avec un
-> sous-dossier par entité — projets, data room, due diligence, Q&A, NDA, valorisation, offres,
-> utilisateurs, audit — chacun avec ses pages list/add/edit/delete selon les besoins. La base de
-> données compte 12 tables liées par clés étrangères. Pour l'export PDF j'utilise DOMPDF, avec un
-> filigrane dynamique via FPDI/TCPDF sur les documents confidentiels, et un repli en HTML
-> imprimable si Composer n'est pas installé, pour que l'application reste fonctionnelle sur tout
-> poste XAMPP standard. »
+> en procédural, avec des requêtes préparées PDO pour se protéger des injections SQL. Le
+> front-end utilise Bootstrap 5 pour le rendu responsive et Chart.js pour les graphiques
+> dynamiques du tableau de bord. Le code est organisé en un dossier par grande fonctionnalité —
+> projets, data room, due diligence, questions/réponses, NDA, valorisation, offres, utilisateurs,
+> audit — avec une base de données de 12 tables liées entre elles. Pour les exports, j'utilise
+> DOMPDF pour le PDF, avec un mécanisme de repli automatique en HTML imprimable si les
+> dépendances ne sont pas installées, afin que l'application reste utilisable sur n'importe quel
+> poste XAMPP standard sans configuration complexe. »
 
-**Montrer :** rapidement l'arborescence du projet dans l'explorateur de fichiers ou un éditeur de
-code, ou le schéma du document technique (`DOCUMENTATION_TECHNIQUE.md`).
+**Montrer :** rapidement l'arborescence du projet, ou une page du document technique.
 
 ## 4. Démonstration en direct des fonctionnalités (5-8 min)
 
-### 4.1 Authentification et sécurité (~0:45)
-**Dire :** « L'authentification distingue trois profils : administrateur, conseiller M&A et
-client investisseur. Les mots de passe sont hachés en bcrypt, la session expire après 20 minutes
-d'inactivité, et chaque formulaire de modification est protégé par un jeton CSRF. »
+### 4.1 Connexion et sécurité (~0:40)
+**Dire :** « Trois profils existent : administrateur, conseiller M&A et client investisseur. Les
+mots de passe sont chiffrés, jamais stockés en clair, et après 5 échecs de connexion l'accès est
+bloqué temporairement. »
 **Faire :** se connecter en **conseiller** (`conseiller@closingpoint.sn`).
 
 ### 4.2 Tableau de bord (~0:45)
-**Dire :** « Le tableau de bord affiche les KPI du portefeuille, deux graphiques Chart.js
-alimentés par les données réelles, et un moteur de commentaires automatiques — par exemple une
-alerte sur un red flag de due diligence. »
-**Montrer :** `dashboard.php`.
+**Dire :** « Le tableau de bord donne une vue d'ensemble chiffrée de tout le portefeuille :
+projets actifs, valeur du pipeline, red flags ouverts, avancement des vérifications — avec des
+messages d'alerte automatiques quand un point nécessite une attention immédiate. »
+**Montrer :** le camembert de répartition des projets (les 6 couleurs/statuts) et les alertes.
 
-### 4.3 Projets M&A — CRUD (~0:45)
-**Dire :** « Le module projets couvre le CRUD complet : cible, acquéreur, statut, valeur estimée,
-avec recherche, filtres multi-critères et pagination sur la liste. »
-**Faire :** `projects/list.php` → filtrer → ouvrir une fiche projet (`view.php`) avec son équipe.
+### 4.3 Projets M&A (~0:45)
+**Dire :** « Chaque dossier de rachat a sa fiche : société cible, acquéreur, statut, valeur
+estimée, équipe assignée avec des rôles différenciés. »
+**Faire :** liste des projets → ouvrir une fiche (ex: Projet Kalao, statut Closing).
 
-### 4.4 Data room virtuelle (~1:00)
-**Dire :** « Chaque projet a sa data room : arborescence de dossiers, upload sécurisé avec liste
-blanche d'extensions, et traçabilité complète — chaque consultation est journalisée. Les PDF
-confidentiels reçoivent un filigrane dynamique au nom de l'utilisateur et horodaté. »
-**Faire :** `dataroom/index.php`, naviguer, ouvrir le journal de consultation (`log.php`).
+### 4.4 Data room (~1:00)
+**Dire :** « La data room est le cœur du projet : un espace sécurisé pour déposer les documents
+confidentiels, organisés en dossiers. Chaque consultation ou téléchargement est enregistré — on
+sait toujours qui a vu quoi et quand. Les PDF confidentiels reçoivent en plus un filigrane
+dynamique avec le nom du téléchargeur et la date, pour dissuader toute fuite. »
+**Faire :** ouvrir la data room d'un projet, montrer l'arborescence.
 
 ### 4.5 Due diligence (~0:45)
-**Dire :** « La due diligence couvre six domaines — juridique, fiscal, financier, commercial, RH,
-IT — avec signalement des red flags et impact financier chiffré, remonté automatiquement au
-tableau de bord. Export PDF de synthèse disponible. »
-**Faire :** `duediligence/list.php`, filtrer un red flag, lancer l'export PDF.
+**Dire :** « La due diligence couvre six domaines de vérification. Un point signalé comme "red
+flag" est chiffré financièrement — c'est ce montant cumulé qui permet de négocier une baisse de
+prix si des problèmes sérieux sont découverts. »
+**Faire :** liste due diligence, montrer un red flag et son impact estimé.
 
 ### 4.6 Q&A et NDA (~0:45)
-**Dire :** « Les investisseurs posent leurs questions via le module Q&A avec notification email
-automatique à la réponse, et signent électroniquement le NDA avant tout accès — signature
-horodatée avec empreinte SHA-256 non-répudiable. »
-**Faire :** basculer en session **client**, poser une question, montrer `ndas/sign.php`.
+**Dire :** « Les investisseurs posent leurs questions directement dans l'application, avec
+notification automatique par email dès la réponse. Et avant tout accès complet à la data room,
+ils signent électroniquement un accord de confidentialité — la signature génère une empreinte
+numérique unique qui prouve qui a signé, quoi, et quand. »
+**Faire :** montrer l'écran NDA (texte + signature).
 
 ### 4.7 Valorisation (~0:45)
-**Dire :** « Trois méthodes de valorisation : DCF selon Gordon-Shapiro, multiples VE/EBITDA, et
-ANCC, comparées visuellement dans un graphique football field. »
-**Faire :** `valuation/dcf.php` puis `list.php`.
+**Dire :** « Trois méthodes classiques d'évaluation : l'actualisation des flux de trésorerie
+futurs, les multiples de marché, et l'actif net comptable corrigé — comparées visuellement dans
+un graphique dès que plusieurs évaluations existent pour un même projet. »
+**Faire :** ouvrir le formulaire DCF, montrer un résultat calculé.
 
 ### 4.8 Offres et administration (~0:45)
-**Dire :** « Le suivi des négociations se fait via les offres et contre-offres avec changement de
-statut en un clic. Côté administration, la gestion des utilisateurs et un journal d'audit qui
+**Dire :** « Le suivi de la négociation se fait via les offres et contre-offres, avec changement
+de statut en un clic. Côté administration, la gestion des comptes et un journal d'audit qui
 horodate toute action sensible, exportable en CSV. »
-**Faire :** `offers/list.php` (changer un statut), puis session **admin** →
-`users/list.php` → `audit/list.php` → export CSV.
+**Faire :** offres → changer un statut ; session **admin** → utilisateurs → journal d'audit.
 
 ## 5. Difficultés rencontrées et solutions apportées (1 min)
 
-**Dire (à adapter à ton vécu réel — sois concret) :**
-> « La principale difficulté a été [exemple : gérer le filigrane dynamique des PDF confidentiels
-> sans dépendance obligatoire, pour que l'application reste utilisable même sans `composer
-> install`]. J'ai résolu cela en [détecter la présence des librairies et basculer automatiquement
-> sur un rendu HTML imprimable en repli]. Une autre difficulté a été [ex: la gestion des droits
-> d'accès différenciés par rôle et par équipe projet pour le client, afin qu'un investisseur ne
-> voie jamais les projets auxquels il n'est pas rattaché] — résolue via la fonction
-> `requireProjectAccess()` vérifiée systématiquement en entrée de chaque module. »
-
-> ⚠️ Personnalise ce bloc avec tes propres difficultés réelles — le jury évalue ta capacité à
-> expliquer et justifier ton propre travail, pas seulement le résultat.
+**Dire :**
+> « J'ai rencontré trois difficultés principales. La première concernait le filigrane dynamique
+> des PDF confidentiels : il repose sur des librairies externes qui ne sont pas toujours
+> installées. J'ai résolu cela en détectant leur présence au moment du téléchargement, avec un
+> repli silencieux sur le fichier original si elles manquent — le téléchargement ne bloque
+> jamais, et la traçabilité en base reste garantie dans tous les cas.
+>
+> La deuxième portait sur le calcul de valorisation par actualisation des flux de trésorerie : la
+> formule de Gordon-Shapiro devient mathématiquement absurde si le taux de croissance à l'infini
+> dépasse le taux d'actualisation — j'ai donc ajouté une validation qui bloque le calcul avec un
+> message explicite plutôt que de laisser afficher un résultat incohérent.
+>
+> La troisième était la gestion des droits d'accès à trois niveaux — le rôle de la personne, et
+> son appartenance ou non à l'équipe d'un projet précis. Plutôt que de répéter cette vérification
+> dans chaque écran, je l'ai centralisée dans deux fonctions réutilisables, appelées
+> systématiquement en début de chaque page, pour garantir la cohérence de la sécurité partout
+> dans l'application. »
 
 ## 6. Apports personnels et perspectives d'amélioration (1 min)
 
-**Dire (à adapter) :**
-> « Au-delà du socle demandé, j'ai ajouté [ex: le moteur de commentaires automatiques du tableau
-> de bord, le calcul d'impact financier cumulé des red flags, ou la bascule automatique des
-> exports PDF]. Comme perspectives d'amélioration, je pense à [ex: une notification en temps réel
-> lors du dépôt d'un nouveau document dans la data room, une signature électronique NDA via un
-> prestataire tiers certifié, ou un module de reporting consolidé multi-projets pour un cabinet
-> gérant plusieurs deals en parallèle]. »
+**Dire :**
+> « Au-delà du socle demandé, j'ai ajouté un moteur de commentaires automatiques sur le tableau
+> de bord qui traduit les chiffres en alertes lisibles pour un directeur — par exemple sur les
+> red flags non traités — ainsi que le calcul automatique de l'impact financier cumulé des
+> risques détectés dans l'export PDF de due diligence.
+>
+> Comme perspectives d'amélioration, je vois surtout deux axes : d'abord, relier explicitement
+> une offre à la contre-offre qui lui répond, pour reconstituer automatiquement le fil complet
+> d'une négociation plutôt que de se fier seulement à l'ordre chronologique ; ensuite, harmoniser
+> les trois méthodes de valorisation pour qu'elles mesurent rigoureusement la même chose — la
+> valeur des fonds propres — avant de les comparer sur le même graphique, ce qui rendrait la
+> comparaison entre méthodes encore plus rigoureuse d'un point de vue financier.
+>
+> Merci de votre attention. »
 
-**Dire (conclusion) :**
-> « Merci de votre attention. »
-
-**Montrer :** retour au tableau de bord ou slide de conclusion.
+**Montrer :** retour au tableau de bord.
 
 ---
 
 ## Notes de tournage
 
-- Respecte l'ordre des 6 parties du cahier des charges — c'est ce que le jury et tes camarades
-  (notation collective à 20 %) attendent de retrouver.
+- Respecte l'ordre des 6 parties — c'est ce que le jury et tes camarades (notation collective à
+  20 %) attendent de retrouver.
 - Coupe les temps morts de chargement au montage plutôt qu'à l'oral.
 - Vise 10-12 min : en dessous de 8 min ou au-dessus de 15 min, tu sors de la fourchette imposée.
+- Les parties 5 et 6 sont rédigées pour toi mais restent **ta** matière : reformule-les avec tes
+  propres mots à l'oral pour que ça sonne naturel, pas récité.
 - Dépose la vidéo sur Google Drive, YouTube (non répertorié) ou WeTransfer, puis transmets le
-  lien à l'enseignant — c'est lui qui le partage avec la promotion pour la notation collective.
+  lien à l'enseignant.
