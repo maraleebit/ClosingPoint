@@ -27,7 +27,7 @@ define('ALLOWED_EXTENSIONS', ['pdf', 'doc', 'docx', 'xls', 'xlsx', 'png', 'jpg',
 define('ITEMS_PER_PAGE', 20);
 
 // Paramètres d'envoi d'email (à adapter en production - PHPMailer/SMTP)
-define('MAIL_FROM', 'no-reply@ma-dataroom.sn');
+define('MAIL_FROM', 'no-reply@closingpoint.sn');
 define('MAIL_FROM_NAME', SITE_NAME);
 define('SMTP_HOST', 'smtp.example.com');
 define('SMTP_PORT', 587);

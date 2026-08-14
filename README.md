@@ -99,10 +99,10 @@ http://localhost/ClosingPoint/public/login.php
 
 | Rôle | Email | Mot de passe |
 |---|---|---|
-| Administrateur | `admin@ma-dataroom.sn` | `Admin@2026` |
-| Conseiller M&A | `conseiller@ma-dataroom.sn` | `Advisor@2026` |
-| Analyste (conseiller) | `analyste@ma-dataroom.sn` | `Advisor@2026` |
-| Client / Investisseur | `client@ma-dataroom.sn` | `Client@2026` |
+| Administrateur | `admin@closingpoint.sn` | `Admin@2026` |
+| Conseiller M&A | `conseiller@closingpoint.sn` | `Advisor@2026` |
+| Analyste (conseiller) | `analyste@closingpoint.sn` | `Advisor@2026` |
+| Client / Investisseur | `client@closingpoint.sn` | `Client@2026` |
 
 > Les mots de passe sont hachés avec `password_hash()` (bcrypt) — aucun mot de passe n'est jamais
 > stocké en clair dans la base de données.

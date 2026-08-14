@@ -223,14 +223,14 @@ CREATE TABLE audit_log (
 -- =====================================================================
 
 -- Comptes de test (mots de passe hachés avec password_hash() / bcrypt réel)
--- admin@ma-dataroom.sn      / Admin@2026    -> rôle admin
--- conseiller@ma-dataroom.sn / Advisor@2026  -> rôle conseiller
--- client@ma-dataroom.sn     / Client@2026   -> rôle client (investisseur / cible)
+-- admin@closingpoint.sn      / Admin@2026    -> rôle admin
+-- conseiller@closingpoint.sn / Advisor@2026  -> rôle conseiller
+-- client@closingpoint.sn     / Client@2026   -> rôle client (investisseur / cible)
 INSERT INTO users (full_name, email, password_hash, role, phone) VALUES
-('Fatou Ndiaye (Administrateur)', 'admin@ma-dataroom.sn', '$2y$10$Lzyb57AgmqkLDVe9YUGsjuPLAcTaBWSpdCgYquZ20FInw2Lk9fgWW', 'admin', '+221771112233'),
-('Moussa Diop (Conseiller M&A)', 'conseiller@ma-dataroom.sn', '$2y$10$4bkqkT2irETxVBCuCcpxR./iSkVp8PtYJNCH8Oemofq8ZBb96ax7K', 'conseiller', '+221772223344'),
-('Awa Diallo (Investisseur)', 'client@ma-dataroom.sn', '$2y$10$CY4ipTPJzuxgi9ahMgl2AedEQEOPuNhEd3TLLGk8gp1wok1XjuwH6', 'client', '+221773334455'),
-('Ibrahima Fall (Analyste)', 'analyste@ma-dataroom.sn', '$2y$10$4bkqkT2irETxVBCuCcpxR./iSkVp8PtYJNCH8Oemofq8ZBb96ax7K', 'conseiller', '+221774445566');
+('Fatou Ndiaye (Administrateur)', 'admin@closingpoint.sn', '$2y$10$Lzyb57AgmqkLDVe9YUGsjuPLAcTaBWSpdCgYquZ20FInw2Lk9fgWW', 'admin', '+221771112233'),
+('Moussa Diop (Conseiller M&A)', 'conseiller@closingpoint.sn', '$2y$10$4bkqkT2irETxVBCuCcpxR./iSkVp8PtYJNCH8Oemofq8ZBb96ax7K', 'conseiller', '+221772223344'),
+('Awa Diallo (Investisseur)', 'client@closingpoint.sn', '$2y$10$CY4ipTPJzuxgi9ahMgl2AedEQEOPuNhEd3TLLGk8gp1wok1XjuwH6', 'client', '+221773334455'),
+('Ibrahima Fall (Analyste)', 'analyste@closingpoint.sn', '$2y$10$4bkqkT2irETxVBCuCcpxR./iSkVp8PtYJNCH8Oemofq8ZBb96ax7K', 'conseiller', '+221774445566');
 
 INSERT INTO ma_projects (code_projet, nom_projet, societe_cible, societe_acquereur, secteur, statut, valeur_estimee, devise, date_debut, date_cible_closing, description, created_by) VALUES
 ('MA-2026-001', 'Projet Baobab', 'Distributeurs Sahel SA', 'Groupe Teranga Holding', 'Distribution & Logistique', 'due_diligence', 4500000000.00, 'FCFA', '2026-03-01', '2026-10-31', 'Acquisition majoritaire (70%) de Distributeurs Sahel SA par le Groupe Teranga Holding afin de renforcer son réseau logistique en Afrique de l\'Ouest.', 2),
@@ -279,7 +279,7 @@ INSERT INTO document_access_log (document_id, user_id, action, adresse_ip) VALUE
 (3, 2, 'upload', '127.0.0.1');
 
 INSERT INTO ndas (project_id, user_id, nom_signataire, email_signataire, hash_signature, adresse_ip) VALUES
-(1, 3, 'Awa Diallo', 'client@ma-dataroom.sn', SHA2('Awa Diallo|client@ma-dataroom.sn|2026-03-05 09:00:00', 256), '127.0.0.1');
+(1, 3, 'Awa Diallo', 'client@closingpoint.sn', SHA2('Awa Diallo|client@closingpoint.sn|2026-03-05 09:00:00', 256), '127.0.0.1');
 
 INSERT INTO due_diligence_items (project_id, domaine, libelle, description, statut, red_flag, impact_estime, responsable_id, date_limite, created_by) VALUES
 (1, 'juridique', 'Vérification des statuts et RCCM', 'Contrôle de la conformité OHADA des statuts et de l\'immatriculation RCCM.', 'valide', 0, NULL, 4, '2026-04-15', 2),

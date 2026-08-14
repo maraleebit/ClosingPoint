@@ -249,10 +249,10 @@ Points de sécurité vérifiables et démontrables :
 
 | Rôle | Email | Mot de passe |
 |---|---|---|
-| Administrateur | `admin@ma-dataroom.sn` | `Admin@2026` |
-| Conseiller M&A | `conseiller@ma-dataroom.sn` | `Advisor@2026` |
-| Analyste (conseiller) | `analyste@ma-dataroom.sn` | `Advisor@2026` |
-| Client / Investisseur | `client@ma-dataroom.sn` | `Client@2026` |
+| Administrateur | `admin@closingpoint.sn` | `Admin@2026` |
+| Conseiller M&A | `conseiller@closingpoint.sn` | `Advisor@2026` |
+| Analyste (conseiller) | `analyste@closingpoint.sn` | `Advisor@2026` |
+| Client / Investisseur | `client@closingpoint.sn` | `Client@2026` |
 
 ---
 

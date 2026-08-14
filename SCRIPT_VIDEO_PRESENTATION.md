@@ -59,7 +59,7 @@ code, ou le schéma du document technique (`DOCUMENTATION_TECHNIQUE.md`).
 **Dire :** « L'authentification distingue trois profils : administrateur, conseiller M&A et
 client investisseur. Les mots de passe sont hachés en bcrypt, la session expire après 20 minutes
 d'inactivité, et chaque formulaire de modification est protégé par un jeton CSRF. »
-**Faire :** se connecter en **conseiller** (`conseiller@ma-dataroom.sn`).
+**Faire :** se connecter en **conseiller** (`conseiller@closingpoint.sn`).
 
 ### 4.2 Tableau de bord (~0:45)
 **Dire :** « Le tableau de bord affiche les KPI du portefeuille, deux graphiques Chart.js
