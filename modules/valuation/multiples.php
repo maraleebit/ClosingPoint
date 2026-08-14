@@ -46,7 +46,7 @@ require __DIR__ . '/../../includes/header.php';
   <?php csrf_field(); ?>
   <input type="hidden" name="project_id" value="<?= $projectId ?>">
   <div class="col-md-4"><label class="form-label">EBITDA (<?= e($project['devise']) ?>) *</label><input type="number" step="0.01" min="0.01" name="ebitda" class="form-control" required value="<?= e((string)$ebitda) ?>"></div>
-  <div class="col-md-4"><label class="form-label">Multiple VE/EBITDA sectoriel *</label><input type="number" step="0.1" min="0.1" name="multiple" class="form-control" required value="<?= e((string)$multiple) ?>"></div>
+  <div class="col-md-4"><label class="form-label">Multiple VE/EBITDA sectoriel *</label><input type="number" step="0.1" min="0.1" name="multiple" class="form-control" required value="<?= $multiple !== null ? e((string)$multiple) : '6.5' ?>"></div>
   <div class="col-md-4"><label class="form-label">Dette nette</label><input type="number" step="0.01" name="dette_nette" class="form-control" value="<?= e((string)$dette) ?>"></div>
   <div class="col-12">
     <button class="btn btn-outline-primary" type="submit"><i class="bi bi-calculator"></i> Calculer</button>
