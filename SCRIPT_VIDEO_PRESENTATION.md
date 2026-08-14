@@ -94,11 +94,19 @@ futurs, les multiples de marché, et l'actif net comptable corrigé — comparé
 un graphique dès que plusieurs évaluations existent pour un même projet. »
 **Faire :** ouvrir le formulaire DCF, montrer un résultat calculé.
 
-### 4.8 Offres et administration (~0:45)
-**Dire :** « Le suivi de la négociation se fait via les offres et contre-offres, avec changement
-de statut en un clic. Côté administration, la gestion des comptes et un journal d'audit qui
-horodate toute action sensible, exportable en CSV. »
-**Faire :** offres → changer un statut ; session **admin** → utilisateurs → journal d'audit.
+### 4.8 Offres et contre-offres (~0:35)
+**Dire :** « Le suivi de la négociation se fait via les offres et contre-offres — offre initiale,
+contre-offres, offre finale — avec changement de statut en un clic. »
+**Faire :** ouvrir les offres d'un projet, changer un statut en direct.
+
+### 4.9 Administration et journal d'audit (~0:50)
+**Dire :** « Côté administration, la gestion des comptes utilisateurs et de leurs rôles. Et
+surtout, un journal d'audit qui horodate automatiquement toute action sensible de la plateforme —
+connexions, créations, suppressions, signatures de NDA, exports — avec l'utilisateur responsable
+et l'adresse réseau d'origine. C'est la traçabilité complète de tout ce qui se passe dans
+l'application, exportable en CSV pour la conformité. »
+**Faire :** session **admin** → Utilisateurs (montrer la liste et les rôles) → Journal d'audit
+(faire défiler quelques lignes récentes, montrer l'export CSV).
 
 ## 5. Difficultés rencontrées et solutions apportées (1 min)
 
