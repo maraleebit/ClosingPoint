@@ -61,7 +61,7 @@ new Chart(document.getElementById('chartFootball'), {
   type: 'bar',
   data: {
     labels: <?= json_encode(array_map(fn($v) => ['dcf'=>'DCF','multiples'=>'Multiples','ancc'=>'ANCC'][$v['methode']] ?? $v['methode'], $valuations)) ?>,
-    datasets: [{ label: 'Valeur (<?= e($project['devise']) ?>)', data: <?= json_encode(array_map(fn($v) => (float)$v['valeur_calculee'], $valuations)) ?>, backgroundColor: '#0d6efd' }]
+    datasets: [{ label: 'Valeur (<?= e($project['devise']) ?>)', data: <?= json_encode(array_map(fn($v) => (float)$v['valeur_calculee'], $valuations)) ?>, backgroundColor: <?= json_encode(array_map(fn($v) => ['dcf'=>'#79573C','multiples'=>'#C9A579','ancc'=>'#3E7C94'][$v['methode']] ?? '#8A7361', $valuations)) ?> }]
   },
   options: { indexAxis: 'y', responsive: true }
 });
