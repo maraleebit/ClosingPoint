@@ -24,6 +24,7 @@ function navLink(string $href, string $icon, string $label, string $currentPath,
     <?php navLink(BASE_URL . '/modules/offers/list.php', 'bi-cash-coin', 'Offres', $currentPath, '/modules/offers/'); ?>
     <?php if ($role === 'admin'): ?>
       <li><hr></li>
+      <li class="sidebar-section-label">Administration</li>
       <?php navLink(BASE_URL . '/modules/users/list.php', 'bi-people', 'Utilisateurs', $currentPath, '/modules/users/'); ?>
       <?php navLink(BASE_URL . '/modules/audit/list.php', 'bi-shield-check', "Journal d'audit", $currentPath, '/modules/audit/'); ?>
     <?php endif; ?>

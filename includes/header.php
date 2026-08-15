@@ -17,7 +17,7 @@ $pageTitle = $pageTitle ?? SITE_NAME;
 <link rel="stylesheet" href="<?= e(BASE_URL) ?>/public/assets/css/style.css">
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom">
+<nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom">
   <div class="container-fluid">
     <a class="navbar-brand fw-bold" href="<?= e(BASE_URL) ?>/public/dashboard.php">
       <i class="bi bi-briefcase-fill"></i> <?= e(SITE_NAME) ?>

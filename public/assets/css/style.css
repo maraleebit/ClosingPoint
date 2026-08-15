@@ -1,28 +1,60 @@
 /* =====================================================================
-   ClosingPoint — Charte graphique : blanc / camel / marron / nude
-   v4 — palette éclaircie + correction : certains composants Bootstrap
-   (boutons, pagination, cases à cocher) figent leurs couleurs en dur à
-   la compilation et NE SUIVENT PAS les variables --bs-primary/--bs-dark
-   redéfinies ci-dessous. Ils sont donc réalignés explicitement plus bas.
-   Les couleurs de statut (succès/alerte/danger) restent standard
-   (vert/jaune/rouge) pour la lisibilité des indicateurs.
+   ClosingPoint — Charte graphique v5
+   Système de design premium : palette camel/brun/nude approfondie,
+   typographie Inter (UI) + Fraunces (titres), élévations douces,
+   composants Bootstrap réalignés (voir notes historiques ci-dessous).
+
+   Bootstrap fige certaines couleurs en dur à la compilation (boutons,
+   pagination, cases à cocher, badges, alertes) et ne suit pas les
+   variables --bs-primary/--bs-dark redéfinies plus bas : ces composants
+   sont donc réalignés explicitement, variante par variante.
    ===================================================================== */
 
 :root {
-  /* Palette de marque */
-  --cp-nude:        #F5EDE4;  /* fond doux, survols */
-  --cp-camel:        #C9A579;  /* boutons, icônes, accents clairs */
-  --cp-camel-dark:   #B08D63;  /* survol/actif des éléments camel */
-  --cp-brown:        #8A6A4E;  /* navbar, en-têtes de tableaux, liens */
-  --cp-brown-dark:   #6E4A33;  /* survol des liens, accents profonds */
-  --cp-text:         #4A372B;  /* texte principal, chaud plutôt que noir pur */
+  /* --- Palette de marque, approfondie --- */
+  --cp-bg:            #FAF6F0;  /* fond de page */
+  --cp-surface:       #FFFFFF;  /* cartes, tableaux, champs */
+  --cp-surface-alt:   #F3EADD;  /* survols doux, fonds alternés */
+  --cp-border:        #E8DECC;  /* bordures discrètes */
+  --cp-nude:          #F5EDE4;  /* fond doux, hover sidebar */
+  --cp-camel:         #C9A579;  /* accents clairs, icônes */
+  --cp-camel-dark:    #A9824F;  /* survol des éléments camel */
+  --cp-brown:         #79573C;  /* boutons, liens, navbar, en-têtes */
+  --cp-brown-dark:    #55391F;  /* survol/actif, accents profonds */
+  --cp-text:          #2B2118;  /* texte principal, chaud et contrasté */
+  --cp-muted:         #8A7361;  /* texte secondaire */
 
-  /* Surcharge des variables globales Bootstrap (composants "utilitaires") */
-  --bs-body-bg: #FBF7F2;
+  /* --- Couleurs sémantiques, intégrées à la charte (moins criardes que le Bootstrap par défaut) --- */
+  --cp-success:       #3F7D5C;
+  --cp-success-bg:    #E8F2EC;
+  --cp-success-bd:    #C7DFD1;
+  --cp-warning:       #A8781F;
+  --cp-warning-bg:    #FBF1DE;
+  --cp-warning-bd:    #EBD9AE;
+  --cp-danger:        #AE4A3C;
+  --cp-danger-bg:     #FBEAE7;
+  --cp-danger-bd:     #EFC9C1;
+  --cp-info:          #3E7C94;
+  --cp-info-bg:       #E8F2F5;
+  --cp-info-bd:       #C6DEE6;
+
+  /* --- Élévation & forme --- */
+  --cp-radius:        12px;
+  --cp-radius-sm:     8px;
+  --cp-shadow-sm:     0 1px 2px rgba(43,33,24,.05), 0 1px 1px rgba(43,33,24,.04);
+  --cp-shadow-md:     0 2px 6px rgba(43,33,24,.05), 0 14px 32px rgba(43,33,24,.09);
+
+  /* --- Typographie --- */
+  --cp-font-ui: 'Inter', -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+  --cp-font-display: 'Fraunces', 'Georgia', serif;
+
+  /* --- Surcharge des variables globales Bootstrap --- */
+  --bs-body-font-family: var(--cp-font-ui);
+  --bs-body-bg: var(--cp-bg);
   --bs-body-color: var(--cp-text);
 
   --bs-primary: var(--cp-brown);
-  --bs-primary-rgb: 138, 106, 78;
+  --bs-primary-rgb: 121, 87, 60;
   --bs-primary-bg-subtle: var(--cp-nude);
   --bs-primary-border-subtle: #D9BFA0;
   --bs-primary-text-emphasis: var(--cp-brown-dark);
@@ -30,67 +62,265 @@
   --bs-secondary: #8A6F55;
   --bs-secondary-rgb: 138, 111, 85;
 
-  --bs-dark: var(--cp-brown);
-  --bs-dark-rgb: 138, 106, 78;
+  --bs-success: var(--cp-success);
+  --bs-success-rgb: 63, 125, 92;
+  --bs-warning: var(--cp-warning);
+  --bs-warning-rgb: 168, 120, 31;
+  --bs-danger: var(--cp-danger);
+  --bs-danger-rgb: 174, 74, 60;
+  --bs-info: var(--cp-info);
+  --bs-info-rgb: 62, 124, 148;
 
-  --bs-border-color: #E7DCCD;
+  --bs-dark: var(--cp-brown);
+  --bs-dark-rgb: 121, 87, 60;
+
+  --bs-border-color: var(--cp-border);
+  --bs-border-radius: var(--cp-radius-sm);
+  --bs-border-radius-lg: var(--cp-radius);
 
   --bs-link-color: var(--cp-brown);
-  --bs-link-color-rgb: 138, 106, 78;
+  --bs-link-color-rgb: 121, 87, 60;
   --bs-link-hover-color: var(--cp-brown-dark);
-  --bs-link-hover-color-rgb: 110, 74, 51;
+  --bs-link-hover-color-rgb: 85, 57, 31;
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap');
+
+html { scroll-behavior: smooth; }
 
 body {
-  background-color: var(--bs-body-bg);
+  background-color: var(--cp-bg);
+  font-family: var(--cp-font-ui);
+  -webkit-font-smoothing: antialiased;
+  letter-spacing: -0.01em;
 }
 
-/* --- En-têtes de tableaux : Bootstrap fixe ces teintes en dur --- */
-.table-dark {
-  --bs-table-bg: var(--cp-brown);
-  --bs-table-color: #fff;
-  --bs-table-border-color: #A0815F;
+h1, h2, h3, .navbar-brand, .login-card h1 {
+  font-family: var(--cp-font-display);
+  letter-spacing: -0.01em;
 }
 
-.navbar-brand i {
-  color: var(--cp-camel);
+h1.h3 {
+  font-weight: 600;
+  font-size: 1.6rem;
+  color: var(--cp-text);
 }
 
-.kpi-card {
-  border-left-width: 4px;
-  box-shadow: 0 1px 3px rgba(74, 46, 30, .08);
-  background-color: #fff;
+a, .btn, .nav-link, .card, input, select, textarea, .badge, .form-check-input {
+  transition: background-color .15s ease, border-color .15s ease, color .15s ease,
+              box-shadow .15s ease, transform .1s ease;
 }
 
+/* --- Navbar : bandeau clair et épuré plutôt que la barre sombre Bootstrap --- */
+.navbar {
+  background-color: var(--cp-surface) !important;
+  border-bottom: 1px solid var(--cp-border) !important;
+  box-shadow: var(--cp-shadow-sm);
+  padding-top: .65rem;
+  padding-bottom: .65rem;
+}
+.navbar-brand {
+  color: var(--cp-text) !important;
+  font-weight: 600;
+  font-size: 1.35rem;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+.navbar-brand i { color: var(--cp-camel-dark); font-size: 1.2rem; }
+.navbar .nav-link {
+  color: var(--cp-text) !important;
+}
+.navbar .nav-link:hover { color: var(--cp-brown) !important; }
+.navbar .badge { font-weight: 500; }
+.navbar-toggler {
+  border-color: var(--cp-border) !important;
+}
+.dropdown-menu {
+  border: 1px solid var(--cp-border);
+  border-radius: var(--cp-radius-sm);
+  box-shadow: var(--cp-shadow-md);
+  padding: .4rem;
+}
+.dropdown-item {
+  border-radius: 6px;
+  padding: .5rem .7rem;
+}
+.dropdown-item:hover { background-color: var(--cp-nude); }
+.dropdown-item.text-danger:hover { background-color: var(--cp-danger-bg); }
+
+/* --- Sidebar --- */
 .sidebar {
-  background-color: #fff !important;
+  background-color: var(--cp-surface) !important;
+  border-right: 1px solid var(--cp-border) !important;
 }
 .sidebar .nav-link {
-  color: var(--cp-text);
-  border-radius: 6px;
+  color: var(--cp-muted);
+  font-size: .92rem;
+  font-weight: 500;
+  border-radius: var(--cp-radius-sm);
   margin-bottom: 2px;
+  padding: .55rem .8rem;
+  display: flex;
+  align-items: center;
+  gap: .55rem;
 }
+.sidebar .nav-link i { font-size: 1.02rem; width: 1.1rem; text-align: center; opacity: .85; }
 .sidebar .nav-link.active {
   background-color: var(--cp-brown);
   color: #fff;
+  font-weight: 600;
+  box-shadow: var(--cp-shadow-sm);
 }
+.sidebar .nav-link.active i { opacity: 1; }
 .sidebar .nav-link:hover:not(.active) {
   background-color: var(--cp-nude);
+  color: var(--cp-text);
+}
+.sidebar hr { border-color: var(--cp-border); margin: .9rem .3rem; }
+.sidebar-section-label {
+  font-size: .68rem;
+  text-transform: uppercase;
+  letter-spacing: .09em;
+  color: var(--cp-muted);
+  font-weight: 600;
+  padding: 0 .8rem;
+  margin: .2rem 0 .4rem;
 }
 
+/* --- Login --- */
 .login-page {
   min-height: 100vh;
-  background: linear-gradient(135deg, var(--cp-brown) 0%, var(--cp-camel) 100%);
+  background:
+    radial-gradient(ellipse at 20% 15%, rgba(255,255,255,.10) 0%, transparent 55%),
+    linear-gradient(150deg, var(--cp-brown-dark) 0%, var(--cp-brown) 45%, var(--cp-camel) 100%);
 }
 .login-card {
   width: 100%;
   max-width: 440px;
   border: none;
-  border-radius: 12px;
+  border-radius: 18px;
+  box-shadow: 0 24px 64px rgba(20,14,8,.35);
+}
+.login-card .card-body { padding: 2.75rem 2.5rem !important; }
+.login-card h1 { font-weight: 600; font-size: 1.6rem; }
+.login-card .bi-briefcase-fill {
+  background: var(--cp-nude);
+  color: var(--cp-brown) !important;
+  width: 56px; height: 56px;
+  border-radius: 14px;
+  display: inline-flex; align-items: center; justify-content: center;
+  font-size: 1.6rem !important;
 }
 
-.table-danger td {
-  vertical-align: middle;
+/* --- Cartes générales --- */
+.card {
+  border: 1px solid var(--cp-border);
+  border-radius: var(--cp-radius);
+  box-shadow: var(--cp-shadow-sm);
+  background-color: var(--cp-surface);
+}
+.card-header {
+  background-color: var(--cp-surface);
+  border-bottom: 1px solid var(--cp-border);
+  font-weight: 600;
+  color: var(--cp-text);
+  border-top-left-radius: var(--cp-radius) !important;
+  border-top-right-radius: var(--cp-radius) !important;
+  padding: .85rem 1.1rem;
+}
+
+/* --- KPI cards : accent de couleur en haut plutôt qu'une lourde bordure gauche --- */
+.kpi-card {
+  position: relative;
+  border: 1px solid var(--cp-border) !important;
+  border-top: none !important;
+  box-shadow: var(--cp-shadow-sm);
+  background-color: var(--cp-surface);
+  overflow: hidden;
+}
+.kpi-card::before {
+  content: "";
+  position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: var(--cp-camel);
+}
+.kpi-card.border-primary::before { background: var(--cp-brown); }
+.kpi-card.border-success::before { background: var(--cp-success); }
+.kpi-card.border-danger::before  { background: var(--cp-danger); }
+.kpi-card.border-warning::before { background: var(--cp-warning); }
+.kpi-card.border-info::before    { background: var(--cp-info); }
+.kpi-card.border-secondary::before { background: var(--cp-muted); }
+.kpi-card .card-body { padding: 1.1rem 1.15rem; }
+.kpi-card .text-muted.small {
+  text-transform: uppercase;
+  font-size: .68rem;
+  letter-spacing: .07em;
+  font-weight: 600;
+  color: var(--cp-muted) !important;
+}
+.kpi-card .fs-3, .kpi-card .fs-5 {
+  font-family: var(--cp-font-display);
+  color: var(--cp-text);
+  margin-top: .2rem;
+}
+
+/* --- Tableaux --- */
+.table-responsive {
+  border-radius: var(--cp-radius);
+  border: 1px solid var(--cp-border);
+  box-shadow: var(--cp-shadow-sm);
+  background: var(--cp-surface);
+}
+.table { margin-bottom: 0; }
+.table-dark {
+  --bs-table-bg: var(--cp-brown);
+  --bs-table-color: #fff;
+  --bs-table-border-color: #8C6B4C;
+}
+.table thead th {
+  font-size: .74rem;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  font-weight: 600;
+  border-bottom: none;
+  padding: .8rem 1rem;
+}
+.table td { padding: .75rem 1rem; vertical-align: middle; border-color: var(--cp-border); }
+.table-striped > tbody > tr:nth-of-type(odd) > * { background-color: var(--cp-nude); color: inherit; }
+.table-hover > tbody > tr:hover > * { background-color: #EFE2CE; }
+.table-danger td, .table-danger {
+  --bs-table-bg: var(--cp-danger-bg);
+  --bs-table-color: var(--cp-text);
+}
+
+/* --- Badges : pastilles douces plutôt que blocs pleins --- */
+.badge { font-weight: 600; letter-spacing: .01em; border-radius: 999px; padding: .38em .75em; }
+.badge.text-bg-success { background-color: var(--cp-success-bg) !important; color: var(--cp-success) !important; border: 1px solid var(--cp-success-bd); }
+.badge.text-bg-danger  { background-color: var(--cp-danger-bg) !important;  color: var(--cp-danger) !important;  border: 1px solid var(--cp-danger-bd); }
+.badge.text-bg-warning { background-color: var(--cp-warning-bg) !important; color: var(--cp-warning) !important; border: 1px solid var(--cp-warning-bd); }
+.badge.text-bg-info    { background-color: var(--cp-info-bg) !important;    color: var(--cp-info) !important;    border: 1px solid var(--cp-info-bd); }
+.badge.text-bg-secondary { background-color: var(--cp-surface-alt) !important; color: var(--cp-muted) !important; border: 1px solid var(--cp-border); }
+.badge.text-bg-primary { background-color: var(--cp-nude) !important; color: var(--cp-brown-dark) !important; border: 1px solid #D9BFA0; }
+.badge.text-bg-dark    { background-color: var(--cp-text) !important; color: #fff !important; }
+
+/* --- Alertes : accent gauche plutôt que fond plein --- */
+.alert { border-radius: var(--cp-radius-sm); border: 1px solid transparent; border-left-width: 3px; }
+.alert-success { --bs-alert-bg: var(--cp-success-bg); --bs-alert-border-color: var(--cp-success); --bs-alert-color: var(--cp-success); }
+.alert-danger  { --bs-alert-bg: var(--cp-danger-bg);  --bs-alert-border-color: var(--cp-danger);  --bs-alert-color: var(--cp-danger); }
+.alert-warning { --bs-alert-bg: var(--cp-warning-bg); --bs-alert-border-color: var(--cp-warning); --bs-alert-color: var(--cp-warning); }
+.alert-info    { --bs-alert-bg: var(--cp-info-bg);    --bs-alert-border-color: var(--cp-info);    --bs-alert-color: var(--cp-info); }
+
+/* --- Formulaires --- */
+.form-label { font-weight: 500; font-size: .88rem; color: var(--cp-text); margin-bottom: .35rem; }
+.form-control, .form-select {
+  border-color: var(--cp-border);
+  border-radius: var(--cp-radius-sm);
+  padding: .55rem .8rem;
+  background-color: var(--cp-surface);
+}
+.form-control:focus, .form-select:focus {
+  border-color: var(--cp-camel-dark);
+  box-shadow: 0 0 0 .2rem rgba(201, 165, 121, .28);
 }
 
 .breadcrumb {
@@ -99,29 +329,44 @@ body {
 }
 
 footer {
-  color: #8A7361 !important;
-  border-color: var(--bs-border-color) !important;
+  color: var(--cp-muted) !important;
+  border-color: var(--cp-border) !important;
+}
+
+/* List groups (sélecteurs de projet) */
+.list-group-item {
+  border-color: var(--cp-border);
+}
+.list-group-item-action:hover, .list-group-item-action:focus {
+  background-color: var(--cp-nude);
+  color: var(--cp-text);
 }
 
 /* =====================================================================
-   Boutons — Bootstrap compile des valeurs littérales (#0d6efd, #6c757d)
-   pour .btn-primary/.btn-secondary/.btn-outline-*, indépendantes de
-   --bs-primary/--bs-secondary. On les réécrit donc explicitement.
+   Boutons — Bootstrap compile des valeurs littérales, indépendantes de
+   --bs-primary/--bs-secondary. Réécriture explicite, radius + ombre.
    ===================================================================== */
+.btn {
+  border-radius: var(--cp-radius-sm);
+  font-weight: 500;
+  padding: .5rem 1rem;
+}
 .btn-primary {
-  --bs-btn-color: var(--cp-text);
-  --bs-btn-bg: var(--cp-camel);
-  --bs-btn-border-color: var(--cp-camel);
-  --bs-btn-hover-color: var(--cp-text);
-  --bs-btn-hover-bg: var(--cp-camel-dark);
-  --bs-btn-hover-border-color: var(--cp-camel-dark);
-  --bs-btn-active-color: var(--cp-text);
-  --bs-btn-active-bg: var(--cp-camel-dark);
-  --bs-btn-active-border-color: var(--cp-camel-dark);
+  --bs-btn-color: #fff;
+  --bs-btn-bg: var(--cp-brown);
+  --bs-btn-border-color: var(--cp-brown);
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: var(--cp-brown-dark);
+  --bs-btn-hover-border-color: var(--cp-brown-dark);
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: var(--cp-brown-dark);
+  --bs-btn-active-border-color: var(--cp-brown-dark);
   --bs-btn-disabled-bg: var(--cp-camel);
   --bs-btn-disabled-border-color: var(--cp-camel);
-  --bs-btn-focus-shadow-rgb: 201, 165, 121;
+  --bs-btn-focus-shadow-rgb: 121, 87, 60;
+  box-shadow: var(--cp-shadow-sm);
 }
+.btn-primary:hover { transform: translateY(-1px); box-shadow: var(--cp-shadow-md); }
 
 .btn-outline-primary {
   --bs-btn-color: var(--cp-brown);
@@ -160,6 +405,12 @@ footer {
 }
 
 /* Pagination : l'état "page active" est également figé en bleu par défaut */
+.pagination .page-link {
+  border-color: var(--cp-border);
+  color: var(--cp-brown);
+  border-radius: var(--cp-radius-sm);
+  margin: 0 2px;
+}
 .pagination {
   --bs-pagination-active-bg: var(--cp-brown);
   --bs-pagination-active-border-color: var(--cp-brown);
@@ -172,12 +423,17 @@ footer {
 }
 .form-check-input:focus {
   border-color: var(--cp-camel);
-  box-shadow: 0 0 0 0.25rem rgba(138, 106, 78, .25);
+  box-shadow: 0 0 0 0.25rem rgba(121, 87, 60, .22);
 }
 
 /* En-tête d'accordéon ouvert (module Q&A) */
+.accordion-item { border-color: var(--cp-border); border-radius: var(--cp-radius-sm) !important; overflow: hidden; margin-bottom: .5rem; }
+.accordion-button {
+  font-weight: 500;
+}
 .accordion-button:not(.collapsed) {
   color: var(--cp-text);
   background-color: var(--cp-nude);
   box-shadow: none;
 }
+.accordion-button:focus { box-shadow: 0 0 0 .2rem rgba(201,165,121,.25); }
